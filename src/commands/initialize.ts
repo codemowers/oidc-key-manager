@@ -1,4 +1,4 @@
-import {Command} from '@oclif/core'
+import {Command, Flags} from '@oclif/core'
 import commonFlags from '../helpers/common-flags'
 import {KubeApiService} from '../helpers/kube-api-service'
 import {Secret} from '../helpers/secret'
@@ -16,6 +16,7 @@ export default class Initialize extends Command {
 
   static flags = {
     ...commonFlags,
+    recreate: Flags.boolean({description: 'recreate the secret if it exists', aliases: ['recreate'], required: false}),
   }
 
   static args = {}
@@ -25,7 +26,7 @@ export default class Initialize extends Command {
     const kubeApiService = new KubeApiService(this, flags)
     kubeApiService.printConfiguration()
 
-    const exists = await kubeApiService.checkSecretExistence()
+    const exists = await kubeApiService.getSecret()
     if (exists && !flags.recreate) {
       this.exit(0)
     }
@@ -34,7 +35,7 @@ export default class Initialize extends Command {
       await kubeApiService.deleteSecret()
     }
 
-    const secret = new Secret()
+    const secret = new Secret(this)
     this.log('Generating secret')
     secret.generateNew()
     await kubeApiService.createSecret(secret)
