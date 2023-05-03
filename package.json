@@ -1,5 +1,5 @@
 {
-  "name": "oidc-key-manager",
+  "name": "@codemowers/oidc-key-manager",
   "version": "0.1.0",
   "description": "CLI to manage secret keys required by oidc-gateway",
   "author": "Erki Aas",
