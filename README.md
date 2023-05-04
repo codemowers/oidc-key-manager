@@ -14,7 +14,7 @@ $ npm install -g @codemowers/oidc-key-manager
 $ key-manager COMMAND
 running command...
 $ key-manager (--version)
-@codemowers/oidc-key-manager/0.2.1 linux-x64 node-v16.17.0
+@codemowers/oidc-key-manager/0.2.2 linux-x64 node-v16.17.0
 $ key-manager --help [COMMAND]
 USAGE
   $ key-manager COMMAND
@@ -57,7 +57,7 @@ EXAMPLES
   $ key-manager initialize --namespace <kube namespace> --secret <secret name> --recreate
 ```
 
-_See code: [dist/commands/initialize.ts](https://github.com/codemowers/oidc-key-manager/blob/v0.2.1/dist/commands/initialize.ts)_
+_See code: [dist/commands/initialize.ts](https://github.com/codemowers/oidc-key-manager/blob/v0.2.2/dist/commands/initialize.ts)_
 
 ## `key-manager rotate`
 
@@ -89,5 +89,5 @@ EXAMPLES
   $ key-manager rotate
 ```
 
-_See code: [dist/commands/rotate.ts](https://github.com/codemowers/oidc-key-manager/blob/v0.2.1/dist/commands/rotate.ts)_
+_See code: [dist/commands/rotate.ts](https://github.com/codemowers/oidc-key-manager/blob/v0.2.2/dist/commands/rotate.ts)_
 <!-- commandsstop -->

@@ -87,7 +87,7 @@ export class KubeApiService {
       const informer = makeInformer(this.kc, `/apis/apps/v1/namespaces/${this.namespace}/deployments/`, listFn)
       informer.on('update', (obj: V1Deployment) => {
         const conditions = obj?.status?.conditions
-        if (conditions) {
+        if (conditions && obj?.metadata?.name === deploymentName) {
           const progressingCondition = conditions.find((c: any) => c.type === 'Progressing')
           if (progressingCondition?.reason === 'NewReplicaSetAvailable') {
             this.command.log('Deployment finished restarting')
