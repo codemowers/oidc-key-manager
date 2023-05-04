@@ -47,8 +47,16 @@ export default class Rotate extends Command {
 
     await kubeApiService.replaceSecret(secret)
 
+    let restarted = false
+
     if (flags['restart-deployment']) {
-      await kubeApiService.restartDeployment(flags['restart-deployment'], flags['restart-deployment-backoff'])
+      try {
+        await kubeApiService.restartDeployment(flags['restart-deployment'], flags['restart-deployment-backoff'])
+        restarted = true
+      } catch (error) {
+        this.log('Restarting deployment failed', error)
+        restarted = false
+      }
     }
 
     if (flags.both || flags.jwks) {
@@ -62,7 +70,15 @@ export default class Rotate extends Command {
     await kubeApiService.replaceSecret(secret)
 
     if (flags['restart-deployment']) {
-      await kubeApiService.restartDeployment(flags['restart-deployment'], flags['restart-deployment-backoff'])
+      try {
+        await kubeApiService.restartDeployment(flags['restart-deployment'], flags['restart-deployment-backoff'])
+        restarted = true
+      } catch (error) {
+        this.log('Restarting deployment failed, proceeding', error)
+        restarted = false
+      }
     }
+
+    this.log('Keys rotated' + (restarted ? '' : ', but deployment not restarted'))
   }
 }
