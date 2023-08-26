@@ -18,7 +18,7 @@
   ],
   "dependencies": {
     "@kubernetes/client-node": "^0.18.1",
-    "@oclif/core": "^2.8.4",
+    "@oclif/core": "^2.11.10",
     "@oclif/plugin-help": "^5",
     "@oclif/plugin-plugins": "^2.4.7",
     "@types/jsrsasign": "^10.5.8",
