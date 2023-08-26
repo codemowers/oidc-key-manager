@@ -517,10 +517,10 @@
     widest-line "^3.1.0"
     wrap-ansi "^7.0.0"
 
-"@oclif/core@^2.8.0", "@oclif/core@^2.8.2", "@oclif/core@^2.8.4", "@oclif/core@^2.9.4":
-  version "2.11.1"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.11.1.tgz#69c3cfd3d9b2df9fe94c6d16a3c5da59706f078a"
-  integrity sha512-/DHDtm/PoSNvWdJtTv1GUYnrCrlTsEQd1CsXKNfMSylpkeOjbDIbt1w4NYZ50BfAWxpCunf7RmbwxFBpDa5lHQ==
+"@oclif/core@^2.11.10", "@oclif/core@^2.8.0", "@oclif/core@^2.8.2", "@oclif/core@^2.8.4":
+  version "2.11.10"
+  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-2.11.10.tgz#638128034b8b4bdf4b23480a7278426f85130170"
+  integrity sha512-/7Umij3OU++6o+z4U+waJ5nP6IvK9KKEVzz+xsla68YoECLQwz43boUKqYizlNMtTfiwNkiYb5QE+OU/q5qEtA==
   dependencies:
     "@types/cli-progress" "^3.11.0"
     ansi-escapes "^4.3.2"
@@ -610,13 +610,13 @@
   resolved "https://registry.npmjs.org/@oclif/screen/-/screen-3.0.4.tgz"
   integrity sha512-IMsTN1dXEXaOSre27j/ywGbBjrzx0FNd1XmuhCWCB9NTPrhWI1Ifbz+YLSEcstfQfocYsrbrIessxXb2oon4lA==
 
-"@oclif/test@^2.4.0":
-  version "2.4.0"
-  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-2.4.0.tgz#138cb846146295350fa38b2f7ee9b15f374b4f53"
-  integrity sha512-eC99f81IdAzJdRtOAH5x28vfTk4Nbuqe9nySq6Y8z8MwA6zkDbJFWNj/Zz5LdBGabtsbuTXBku8U+evFrYMTcw==
+"@oclif/test@^2.4.7":
+  version "2.4.7"
+  resolved "https://registry.yarnpkg.com/@oclif/test/-/test-2.4.7.tgz#4372270157aa6598c0d1b61349b2eff4e2003193"
+  integrity sha512-r18sKGNUm/VGQ8BkSF9Kn7QeMGjGMDUrLxTDPzL5ERaBF5YSi+O9CT3mKhcFdrMwGnCqPVvlAdX4U/6gtYPy1A==
   dependencies:
-    "@oclif/core" "^2.9.4"
-    fancy-test "^2.0.31"
+    "@oclif/core" "^2.11.10"
+    fancy-test "^2.0.34"
 
 "@octokit/auth-token@^2.4.4":
   version "2.5.0"
@@ -2327,10 +2327,10 @@ extsprintf@1.3.0, extsprintf@^1.2.0:
   resolved "https://registry.npmjs.org/extsprintf/-/extsprintf-1.3.0.tgz"
   integrity sha512-11Ndz7Nv+mvAC1j0ktTa7fAb0vLyGGX+rMHNBYQviQDGU0Hw7lhctJANqbPhu9nV9/izT/IntTgZ7Im/9LJs9g==
 
-fancy-test@^2.0.31:
-  version "2.0.32"
-  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-2.0.32.tgz#3cbf7ea8a83f9912b02d9ee0782517cca71834f9"
-  integrity sha512-yN40FulpMlEDVp/3YbSxVzkdUR/u0ZAk2Wu30vVvv79Dni0LoSz90ZXtLsp6e813ED0SHkaW/zfgDEp8YqF9Lw==
+fancy-test@^2.0.34:
+  version "2.0.35"
+  resolved "https://registry.yarnpkg.com/fancy-test/-/fancy-test-2.0.35.tgz#18c0ccd767a7332bea186369a7e7a79a3b4582bb"
+  integrity sha512-XE0L7yAFOKY2jDnkBDDQ3JBD7xbBFwAFl1Z/5WNKBeVNlaEP08wuRTPE3xj2k+fnUp2CMUfD+6aiIS+4pcrjwg==
   dependencies:
     "@types/chai" "*"
     "@types/lodash" "*"
@@ -2338,7 +2338,7 @@ fancy-test@^2.0.31:
     "@types/sinon" "*"
     lodash "^4.17.13"
     mock-stdin "^1.0.0"
-    nock "^13.3.2"
+    nock "^13.3.3"
     stdout-stderr "^0.1.9"
 
 fast-deep-equal@^3.1.1, fast-deep-equal@^3.1.3:
@@ -3853,10 +3853,10 @@ nice-try@^1.0.4:
   resolved "https://registry.npmjs.org/nice-try/-/nice-try-1.0.5.tgz"
   integrity sha512-1nh45deeb5olNY7eX82BkPO7SSxR5SSYJiPTrTdFUVYwAl8CKMA5N9PjTYkHiRjisVcxcQ1HXdLhx2qxxJzLNQ==
 
-nock@^13.3.2:
-  version "13.3.2"
-  resolved "https://registry.yarnpkg.com/nock/-/nock-13.3.2.tgz#bfa6be92d37f744b1b758ea89b1105cdaf5c8b3f"
-  integrity sha512-CwbljitiWJhF1gL83NbanhoKs1l23TDlRioNraPTZrzZIEooPemrHRj5m0FZCPkB1ecdYCSWWGcHysJgX/ngnQ==
+nock@^13.3.3:
+  version "13.3.3"
+  resolved "https://registry.yarnpkg.com/nock/-/nock-13.3.3.tgz#179759c07d3f88ad3e794ace885629c1adfd3fe7"
+  integrity sha512-z+KUlILy9SK/RjpeXDiDUEAq4T94ADPHE3qaRkf66mpEhzc/ytOMm3Bwdrbq6k1tMWkbdujiKim3G2tfQARuJw==
   dependencies:
     debug "^4.1.0"
     json-stringify-safe "^5.0.1"
