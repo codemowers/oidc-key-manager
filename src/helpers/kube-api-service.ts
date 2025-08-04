@@ -125,7 +125,11 @@ export class KubeApiService {
 
   async createSecret(secret: Secret, labels?: any): Promise<void> {
     this.command.log(`Creating secret ${this.secretName}`)
-    await this.coreV1Api.createNamespacedSecret(this.namespace, secret.toKubeSecret(this.secretName, labels))
+    try {
+      await this.coreV1Api.createNamespacedSecret(this.namespace, secret.toKubeSecret(this.secretName, labels))
+    } catch (error) {
+      console.error(error)
+    }
     this.command.log(`Created secret ${this.secretName}`)
   }
 
