@@ -12,6 +12,7 @@ export default class Initialize extends Command {
     '<%= config.bin %> <%= command.id %>',
     '<%= config.bin %> <%= command.id %> -n <kube namespace> -s <secret name>',
     '<%= config.bin %> <%= command.id %> --namespace <kube namespace> --secret <secret name> --recreate',
+    '<%= config.bin %> <%= command.id %> --additional-label "app.kubernetes.io/instance: passmower"',
   ]
 
   static flags = {
@@ -38,6 +39,7 @@ export default class Initialize extends Command {
     const secret = new Secret(this)
     this.log('Generating secret')
     secret.generateNew()
-    await kubeApiService.createSecret(secret)
+
+    await kubeApiService.createSecret(secret, flags.additionalLabel)
   }
 }

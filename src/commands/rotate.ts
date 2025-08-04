@@ -45,7 +45,7 @@ export default class Rotate extends Command {
       secret.appendCookieKey(flags['max-number-of-cookie-keys'])
     }
 
-    await kubeApiService.replaceSecret(secret)
+    await kubeApiService.replaceSecret(secret, flags.additionalLabel)
 
     let restarted = false
 
@@ -67,7 +67,7 @@ export default class Rotate extends Command {
       secret.rotateCookieKeys()
     }
 
-    await kubeApiService.replaceSecret(secret)
+    await kubeApiService.replaceSecret(secret, flags.additionalLabel)
 
     if (flags['restart-deployment']) {
       try {
