@@ -31,7 +31,6 @@ export default class Rotate extends Command {
     const kubeSecret = await kubeApiService.getSecret()
     if (!kubeSecret) {
       this.error('Secret does not exist')
-      this.exit(1)
     }
 
     const secret = new Secret(this)
@@ -45,7 +44,7 @@ export default class Rotate extends Command {
       secret.appendCookieKey(flags['max-number-of-cookie-keys'])
     }
 
-    await kubeApiService.replaceSecret(secret)
+    await kubeApiService.replaceSecret(secret, flags.additionalLabel)
 
     let restarted = false
 
@@ -67,7 +66,7 @@ export default class Rotate extends Command {
       secret.rotateCookieKeys()
     }
 
-    await kubeApiService.replaceSecret(secret)
+    await kubeApiService.replaceSecret(secret, flags.additionalLabel)
 
     if (flags['restart-deployment']) {
       try {

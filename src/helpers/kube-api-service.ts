@@ -109,7 +109,6 @@ export class KubeApiService {
     .catch(error => {
       if (error.statusCode !== 404) {
         this.command.error(error)
-        this.command.exit(1)
       }
 
       return null
@@ -124,18 +123,18 @@ export class KubeApiService {
     this.command.log(`Existing secret ${this.secretName} deleted`)
   }
 
-  async createSecret(secret: Secret): Promise<void> {
+  async createSecret(secret: Secret, labels?: any): Promise<void> {
     this.command.log(`Creating secret ${this.secretName}`)
-    await this.coreV1Api.createNamespacedSecret(this.namespace, secret.toKubeSecret(this.secretName))
+    await this.coreV1Api.createNamespacedSecret(this.namespace, secret.toKubeSecret(this.secretName, labels))
     this.command.log(`Created secret ${this.secretName}`)
   }
 
-  async replaceSecret(secret: Secret): Promise<void> {
+  async replaceSecret(secret: Secret, labels?: any): Promise<void> {
     this.command.log(`Replacing secret ${this.secretName}`)
     await this.coreV1Api.replaceNamespacedSecret(
       this.secretName,
       this.namespace,
-      secret.toKubeSecret(this.secretName),
+      secret.toKubeSecret(this.secretName, labels),
     )
   }
 }
