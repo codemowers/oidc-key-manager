@@ -31,7 +31,6 @@ export default class Rotate extends Command {
     const kubeSecret = await kubeApiService.getSecret()
     if (!kubeSecret) {
       this.error('Secret does not exist')
-      this.exit(1)
     }
 
     const secret = new Secret(this)

@@ -109,7 +109,6 @@ export class KubeApiService {
     .catch(error => {
       if (error.statusCode !== 404) {
         this.command.error(error)
-        this.command.exit(1)
       }
 
       return null

@@ -29,7 +29,7 @@ export default class Initialize extends Command {
 
     const exists = await kubeApiService.getSecret()
     if (exists && !flags.recreate) {
-      this.exit(0)
+      return
     }
 
     if (exists) {
