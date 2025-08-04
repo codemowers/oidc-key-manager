@@ -97,7 +97,7 @@ export class Secret {
     const metaData = new V1ObjectMeta()
     metaData.name = secretName
     if (labels) {
-      metaData.labels = labels
+      metaData.labels = {...labels}
     }
     return metaData
   }
